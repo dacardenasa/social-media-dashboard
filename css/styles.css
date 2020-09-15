@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+:root {
+  --bg-color-theme: hsl(230, 17%, 14%);
+  --primary-color-theme: #fff;
+  --secondary-color-theme: hsl(228, 34%, 66%);
+  --bg-color-card-theme: hsl(228, 28%, 20%);
+  --hover-color-card-theme: hsl(228, 26%, 27%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color-theme);
+  transition: all 300ms;
+}
+
+/* Theme light && dark styles */
+
+html[data-theme='dark'] {
+  --bg-color-theme: hsl(230, 17%, 14%);
+  --primary-color-theme: #fff;
+  --secondary-color-theme: hsl(228, 34%, 66%);
+  --bg-color-card-theme: hsl(228, 28%, 20%);
+  --hover-color-card-theme: hsl(228, 26%, 27%);
+  --bg-toogle-theme: linear-gradient(to right, #f7ff00, #db36a4);
+}
+
+html[data-theme='light'] {
+  --bg-color-theme: #fff;
+  --primary-color-theme: hsl(230, 17%, 14%);
+  --secondary-color-theme: hsl(228, 12%, 44%);
+  --bg-color-card-theme: hsl(227, 47%, 96%);
+  --hover-color-card-theme: hsl(232, 33%, 91%);
+  --bg-toogle-theme: hsl(230, 22%, 74%);
+}
+
+/* Classes to manage increase and decrease data */
+
+.success {
+  color: #1fb089;
+}
+
+.danger {
+  color: #c4032a;
+}
+
+/* end */
+
+header {
+  width: 85%;
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
+}
+
+.container {
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
+}
+
+.social-media-box {
+  min-height: 115px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-media-box .title-box {
+  padding: 35px 0 25px 0;
+}
+
+.social-media-box .title-box h2 {
+  color: var(--primary-color-theme);
+  margin-bottom: 5px;
+  font-size: 1.70em;
+}
+
+.social-media-box .title-box p {
+  font-weight: 550;
+  color: var(--secondary-color-theme);
+  font-size: 0.9em;
+}
+
+.social-media-box .theme-box {
+  display: flex;
+  align-items: center;
+  padding: 35px 0 25px 0;
+}
+
+.social-media-box .theme-box .title {
+  padding-right: 10px;
+  color: var(--secondary-color-theme);
+  font-size: 12px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:focus {
+  outline: 0;
+}
+
+.toggle {
+  height: 24px;
+  width: 44px;
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  border: 1px solid #ccc;
+  background: var(--bg-toogle-theme);
+  transition: all 0.2s ease;
+}
+
+.toggle:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
+  transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+}
+
+.toggle:checked {
+  border-color: #ccc;
+}
+
+.toggle:checked:after {
+  transform: translatex(20px);
+}
+
+/* */
+
+.social-overview-title .title-box h2 {
+  color: var(--secondary-color-theme);
+  padding: 10px 0 10px 0;
+}
+
+.social-media-boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 100%;
+  padding: 21px 0 21px 0;
+}
+
+.social-box {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  min-height: 216px;
+  text-align: center;
+  background-color: var(--bg-color-card-theme);
+  border-radius: 5px;
+  border-top: 5px solid #198ff5;
+  padding: 20px;
+  transition: all 300ms;
+  margin-bottom: 15px;
+}
+
+.social-user-box {
+  display: flex;
+  justify-content: center;
+}
+
+.social-user-box .fa-facebook-official,
+.social-user-box .fa-twitter,
+.social-user-box .fa-instagram,
+.social-user-box .fa-youtube-play {
+  font-size: 25px;
+  color: #198ff5;
+}
+
+.social-user-box .social-username {
+  color: var(--secondary-color-theme);
+  height: 100%;
+  font-size: 12px;
+  line-height: 23px;
+  font-weight: 550;
+  padding-left: 5px;
+}
+
+.social-followers-box {
+  padding: 20px 0 20px 0;
+}
+
+.social-followers-box h1 {
+  color: var(--primary-color-theme);
+  font-size: 50px;
+}
+
+.social-followers-box p {
+  color: var(--secondary-color-theme);
+  font-size: 13px;
+  font-weight: regular;
+  letter-spacing: 0.2em;
+}
+
+.social-followers-data span {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.social-box.instagram {
+  border-image-source: linear-gradient(to right, #f7ff00, #db36a4);
+  border-image-slice: 1;  
+}
+
+.social-box.youtube {
+  border-color: #c4032a;
+}
+
+.social-user-box.instagram .fa-instagram,
+.overview-box .header-info.instagram .fa-instagram {
+  background: -webkit-linear-gradient(to right, #f7ff00, #db36a4);
+  background: linear-gradient(to right, #f7ff00, #db36a4); 
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color:transparent;
+}
+
+.social-user-box .fa-youtube-play,
+.overview-box .header-info .fa-youtube-play {
+  color: #c4032a;
+}
+
+.social-box:hover,
+.overview-box:hover {
+  background-color: var(--hover-color-card-theme);
+  cursor: pointer;
+}
+
+.social-overview-boxes {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.overview-box {
+  display: flex;
+  padding: 25px 30px 25px 25px;
+  min-height: 125px;
+  flex-direction: column;
+  width: 23%;
+  background-color: var(--bg-color-card-theme);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  transition: all 300ms;
+}
+
+.overview-box .header-info,
+.overview-box .summary-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.overview-box .summary-info {
+  padding-top: 15px;
+}
+
+.overview-box .header-info p {
+  color: var(--secondary-color-theme);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.overview-box .header-info i {
+  color: #198ff5;
+  font-size: 25px;
+}
+
+.overview-box .summary-info h1 {
+  color: var(--primary-color-theme);
+}
+
+.overview-box .summary-info .social-followers-data {
+  align-self: end;
+}
+
+@media (max-width: 992px) {
+
+  header {
+    width: 90%;
+  }
+
+  .social-media-box {
+    flex-flow: column wrap;
+  }
+
+  .social-media-box .title-box {
+    width: 100%;
+  }
+
+  .social-media-box .theme-box {
+    width: 100%;
+    padding: 25px 0 15px 0;
+    border-top: 1px solid #ccc;
+    justify-content: space-between;
+  }
+
+  
+  .container {
+    width: 90%;
+  }
+
+  .social-box {
+    width: 40%;
+  }
+
+  .overview-box {
+    width: 40%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .social-box {
+    width: 46%;
+  }
+
+  .overview-box {
+    width: 46%;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  header {
+    width: 95%;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .social-media-boxes {
+    justify-content: center;
+  }
+
+  .social-box {
+    width: 70%;
+    margin-bottom: 25px;
+  }
+
+  .social-overview-boxes {
+    justify-content: center;
+  }
+
+  .overview-box {
+    width: 70%;
+  }
+
+}
